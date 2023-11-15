@@ -11,7 +11,7 @@ root.resizable(0,0)
 mensaje_label = tk.Label(root, text="",bg='#589494')
 mensaje_label.pack()
 
-img = Image.open('photo.jpg')
+img = Image.open('proyecto\photo.jpg')
 img.thumbnail((200, 200))
 img = ImageTk.PhotoImage(img)
 
