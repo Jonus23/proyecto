@@ -12,21 +12,26 @@ def Inicio ():
     )
         
     cursor = conexion.cursor()
-    usuario = cursor.execute('SELECT usuario')
-    contraseña = cursor.execute('SELECT contraseña')
+    cursor.execute('SELECT usuario, contraseña FROM `ingreso` WHERE 1')  # Reemplaza 'nombre_de_la_tabla' con el nombre real de tu tabla
+    resultado = cursor.fetchone()
 
-    Usu = usuarioEntry.get()
-    password = contraseñaEntry.get()
-    
-    
-    if Usu == usuario and password == contraseña:
-        mensaje.config(text='Inicio de sesión valida')
+    if resultado is not None:
+        usuario_bd, contraseña_bd = resultado
+        usuario_ingresado = usuarioEntry.get()
+        contraseña_ingresada = contraseñaEntry.get()
+
+        if usuario_ingresado == usuario_bd and contraseña_ingresada == contraseña_bd:
+            mensaje.config(text='Inicio de sesión válida')
+        else:
+            mensaje.config(text='Inicio de sesión inválida')
     else:
-        mensaje.config(text='Inicio de sesión invalida')
+        mensaje.config(text='Usuario no encontrado en la base de datos')
 
     cursor.close()
     conexion.close()
-
+    
+    root.after(5000, root.destroy)
+    
 root = tk.Tk()
 root.title('Inicio de sesión')
 root.geometry('400x330')
