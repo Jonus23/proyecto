@@ -3,8 +3,9 @@ import tkinter as tk
 from tkinter import ttk
 
 def materia():
-    root = tk.Tk()
-    root.title("Lista de materias")
+    
+    matter = tk.Toplevel()
+    matter.title("Lista de materias")
 
     conexion = mysql.connector.connect(
                 host="localhost",
@@ -21,7 +22,7 @@ def materia():
     cursor.close()
     conexion.close()
     
-    materias = ttk.Treeview(root, columns=('id_clase', 'nombre_clase', 'carrera_relacionada'))
+    materias = ttk.Treeview(matter, columns=('id_clase', 'nombre_clase', 'carrera_relacionada'))
     materias.heading('id_clase', text= 'ID')
     materias.heading('nombre_clase', text= 'Clase')
     materias.heading('carrera_relacionada', text= 'Carrera')
@@ -31,7 +32,4 @@ def materia():
         materias.insert('','end', values= clas)
         materias.pack()
         
-    root.mainloop()
-    
-
-materia()
+    matter.mainloop()

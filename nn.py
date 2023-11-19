@@ -23,7 +23,6 @@ def Inicio():
 
         if usuario_ingresado == usuario_bd and contraseña_ingresada == contraseña_bd:
             mensaje.config(text='Inicio de sesión válida')
-            root.after(4000)
             root.destroy()
             app.menu()
 

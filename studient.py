@@ -4,7 +4,7 @@ from tkinter import ttk
 
 
 def estudiantes():
-    root = tk.Tk()
+    root = tk.Toplevel()
     root.title("Lista de estudiantes")
 
     conexion = mysql.connector.connect(
