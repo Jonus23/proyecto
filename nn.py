@@ -34,7 +34,14 @@ def Inicio():
     cursor.close()
     conexion.close()
 
-
+def cambiar_color_entrada(event):
+        event.widget.config(bg='red')    
+    
+def cambiar_color_salida(event):
+    event.widget.config(bg='SystemButtonFace')
+    
+def on():
+    root.destroy()
         
 root = tk.Tk()
 root.title('Inicio de sesión')
@@ -73,6 +80,8 @@ label.pack()
 
 boton = tk.Button(root, text='Iniciar Sesión', command= Inicio)
 boton.pack()
+boton.bind('<Enter>', cambiar_color_entrada)
+boton.bind('<Leave>', cambiar_color_salida)
 
 root.mainloop()
 

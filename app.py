@@ -29,6 +29,7 @@ def menu():
     ventana_menu.geometry('300x380')
     ventana_menu.config(bg='#589494')
     ventana_menu.resizable(0, 0)
+    ventana_menu.iconbitmap('kisspng-computer-icons-technology-symbol-icon-design-5b0037144a7b63.ico')
 
     label = tk.Label(ventana_menu, text="", bg='#589494')
     label.pack()
