@@ -6,6 +6,7 @@ from tkinter import ttk
 def estudiantes():
     root = tk.Toplevel()
     root.title("Lista de estudiantes")
+    root.iconbitmap('kisspng-computer-icons-technology-symbol-icon-design-5b0037144a7b63.ico')
 
     conexion = mysql.connector.connect(
                 host="localhost",

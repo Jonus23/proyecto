@@ -17,7 +17,12 @@ def menu():
     
     def off():
         ventana_menu.destroy()
+        
+    def cambiar_color_entrada(event):
+        event.widget.config(bg='lightblue')    
     
+    def cambiar_color_salida(event):
+        event.widget.config(bg='SystemButtonFace')
     
     ventana_menu = tk.Tk()
     ventana_menu.title('Menu')
@@ -38,30 +43,36 @@ def menu():
     mensaje = tk.Label(ventana_menu, text="", bg='#589494')
     mensaje.pack()
 
-    Estudiante = tk.Button(ventana_menu, text='ESTUDIANTES', command=std)
+    Estudiante = tk.Button(ventana_menu, text='ESTUDIANTES',width=20, command=std)
     Estudiante.pack()
+    Estudiante.bind('<Enter>', cambiar_color_entrada)
+    Estudiante.bind('<Leave>', cambiar_color_salida)
 
     mensaje = tk.Label(ventana_menu, text="", bg='#589494')
     mensaje.pack()
 
-    Docente = tk.Button(ventana_menu, text='DOCENTES', command= mst)
+    Docente = tk.Button(ventana_menu, text='DOCENTES',width=20, command= mst)
     Docente.pack()
+    Docente.bind('<Enter>', cambiar_color_entrada)
+    Docente.bind('<Leave>', cambiar_color_salida)
 
     mensaje = tk.Label(ventana_menu, text="", bg='#589494')
     mensaje.pack()
 
-    Materias = tk.Button(ventana_menu, text='MATERIAS', command= clss)
+    Materias = tk.Button(ventana_menu, text='MATERIAS',width=20, command= clss)
     Materias.pack()
+    Materias.bind('<Enter>', cambiar_color_entrada)
+    Materias.bind('<Leave>', cambiar_color_salida)
 
     mensaje = tk.Label(ventana_menu, text="", bg='#589494')
     mensaje.pack()
 
-    Cerrar = tk.Button(ventana_menu, text='CERRAR SESION', command= off)
+    Cerrar = tk.Button(ventana_menu, text='CERRAR SESION',width=20, command= off)
     Cerrar.pack()
+    Cerrar.bind('<Enter>', cambiar_color_entrada)
+    Cerrar.bind('<Leave>', cambiar_color_salida)
 
     mensaje = tk.Label(ventana_menu, text="", bg='#589494')
     mensaje.pack()
 
     ventana_menu.mainloop()
-
-

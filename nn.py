@@ -41,6 +41,7 @@ root.title('Inicio de sesión')
 root.geometry('370x330')
 root.config(bg='#589494')
 root.resizable(0,0)
+root.iconbitmap('kisspng-computer-icons-technology-symbol-icon-design-5b0037144a7b63.ico')
 
 label = tk.Label(root, text="",bg='#589494')
 label.pack()
